@@ -5,19 +5,40 @@
 
 #### Selector
 ```
-single: $('.test') => document.querySelector('.test')
-multi: $('.tests') => document.querySelectorAll('.tests') 
+single: $('.string') => document.querySelector('.string')
+multi: $('.string') => document.querySelectorAll('.string') // nodeList 반환 
+```
+
+#### Style
+```
+get: $(el).css('color') => getComputedStyle(el)['color'];
+set: $(el).css('color', 'red') => el.style.color = 'red'
+$(el).hide() => el.style.display = 'none'
+$(el).show() => el.style.display = '/block/flex'
+```
+
+#### Attributes
+```
+get: $(el).attr('string') => el.getAttribute('string')
+set: $(el).attr('string', 123) => el.getAttribute('string', 123) 
+remove: $(el).removeAttr('string') => el.removeAttribute('string')
 ```
 
 #### Class
 ```
-$(el).addClass('test') => el.classList.add('test')
-$(el).removeClass('test') => el.classList.remove('test')
-$(el).toggleClass('test') => el.classList.toggle('test')
-$(el).hasClass('test') => el.classList.contains('test')
+$(el).addClass('string') => el.classList.add('string')
+$(el).removeClass('string') => el.classList.remove('string')
+$(el).toggleClass('string') => el.classList.toggle('string')
+$(el).hasClass('string') => el.classList.contains('string')
 ```
 
 #### Position
 ```
 $(el).position().top => el.offsetTop
+```
+
+#### Text
+```
+get: $(el).text() => el.textContent
+set: $(el).text('string') => el.textContent = 'string'
 ```
