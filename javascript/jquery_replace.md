@@ -42,3 +42,8 @@ $(el).position().top => el.offsetTop
 get: $(el).text() => el.textContent
 set: $(el).text('string') => el.textContent = 'string'
 ```
+
+#### HTML
+```
+$(el).html('string') => el.innerHTML = 'string'
+```
