@@ -42,10 +42,14 @@ Draggable.create(dragSelector, {
 tween.staggerFromTo(arraySelector, time, { opacity: 0 }, { opacity: 1 }, staggerTime)
 ```
 
-#### Scroll
+### Scroll
 ```
 tween.to(window, time, {
   scrollTo: { y: top, autoKill: true },
   ease: ease,
 });
 ```
+
+#### Vertical Lock
+[결과 codepen](https://codepen.io/emsbn/pen/XWKZQBx)  
+[참고](https://codepen.io/rhernando/pen/5366f11be0238e46a98cdaf74ae6d882)
