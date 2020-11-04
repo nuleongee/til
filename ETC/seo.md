@@ -2,7 +2,7 @@
 `Search Engine Optimization`
 
 #### SSR
-`browser -> front -> back -> db -> back -> front -> browser`
+`browser -> front -> back -> DB -> back -> front -> browser`
 #####  장점
 - 초기 로딩 속도 빠름
 - SEO 유리
@@ -12,7 +12,7 @@
 
 #### CSR
 `browser -> front -> browser` (js, html, css, img)  
-`browser -> back -> db -> back -> browser` ()
+`browser -> back -> DB -> back -> browser` (data)
 #####  장점
 - 빠른 화면 전환
 ##### 단점
@@ -23,3 +23,4 @@
 #### Next.js
 - 첫 실행: SSR
 - 이후: CSR
+- 코드 스플리팅
