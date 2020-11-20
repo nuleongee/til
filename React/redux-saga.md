@@ -40,8 +40,8 @@ watch.next({type: 'END'}) // end
 
 #### effects
 `all([...effects])`:  배열 전체 effects 실행  
-`fork(fn)`:  Generator 함수 실행  
-`call(fn)`:  Generator 함수 실행  
+`fork(fn)`:  Generator 비동기 함수 실행, Blocking, Sync  
+`call(fn)`:  Generator 동기 함수 실행, Non-Blocking, Async  
 `take( /*/fn/string/array)`: wait for a specified action  
 `put(action)`: dispatching of an action to the store  
 [참고](https://redux-saga.js.org/docs/api/)
