@@ -43,6 +43,10 @@ watch.next({type: 'END'}) // end
 `fork(fn)`: Generator 비동기 함수 실행, Non-Blocking, Async  
 `call(fn)`: Generator 동기 함수 실행, Blocking, Sync  
 `take( /*/fn/string/array)`: wait for a specified action  
+`takeEvery`: 디스패치되는 모든 액션들을 처리  
+`takeLatest`: 디스패치된 가장 마지막 액션만을 처리, 응답만 처리(요청은 처리X)
+`throttle`:     
+`select`: provided selector on the current Store's state  
 `put(action)`: dispatching of an action to the store  
 [참고](https://redux-saga.js.org/docs/api/)
 
