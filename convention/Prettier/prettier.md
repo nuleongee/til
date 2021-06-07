@@ -19,7 +19,7 @@ ESLint와 다르게 규칙이 미리 세팅돼 있어 설정없이 바로 사용
 npm i -D eslint-config-prettier
 ```
 ```javascript
-// .eslintrc.js
+//  .eslintrc.js
 module.exports = {
   extends: [
     "eslint:recommended",
