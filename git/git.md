@@ -7,3 +7,8 @@ git reset --hard
 ```shell
 git rm --cached node_modules -r
 ```
+
+### .gitignore 동작 안 할때
+```shell
+git rm -r --cached .
+```
