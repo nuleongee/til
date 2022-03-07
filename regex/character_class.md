@@ -124,6 +124,8 @@ c`a`t c`o``n``c``a`t
 ###### /\A.../g
 `Ere` iron was found or tree a was hewn, When young was mountain under moon;
 
+---
+
 ###### /\Z.../
 Ere iron was found or tree a was hewn, When young was mountain under mo`on;`
 ###### /\Z.../g
