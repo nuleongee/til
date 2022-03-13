@@ -70,3 +70,8 @@
     - HTTP - 80
     - HTTPS - 443
 
+#### DNS (Domain Name System)
+- IP는 기억하기 어려움
+- IP는 변경될 수 있음
+- 도메인명을 IP 주소로 변환 (전화번호부)
+
