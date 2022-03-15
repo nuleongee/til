@@ -75,3 +75,33 @@
 - IP는 변경될 수 있음
 - 도메인명을 IP 주소로 변환 (전화번호부)
 
+#### URI (Uniform Resource Identifier)
+- URL(~ ~ Locator) + URN(~ ~ Name)
+
+#### URL
+- scheme://[userinfo@]host[:port][/path][?query][#fragment]
+- https://www.google.com:443/search?q=test&hl=ko
+
+---
+
+- scheme - 주로 프로토콜(어떤 방식으로 자원에 접근할지 약속한 규칙) 사용
+  - http, https, ftp
+- userinfo
+  - 사용자 정보를 포함해서 인증
+  - 거의 사용 안 함
+- port
+  - http 80, https 443 정해진 포트는 생략 가능
+- path
+  - 리소스 경로
+  - 계층적 구조
+    - /members
+    - /members/50
+    - /members/50/thumb.jpg
+- query
+  - key=value 형태
+  - ?로 시작, &로 추가 가능
+    - ?keyA=valueA&keyB=valueB
+  - query parameter, query string 등으로 불림
+- fragment
+  - html 내부 북마크 등에 사용
+  - 서버로 전송하는 정보 아님
