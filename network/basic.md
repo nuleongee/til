@@ -105,3 +105,34 @@
 - fragment
   - html 내부 북마크 등에 사용
   - 서버로 전송하는 정보 아님
+  
+#### 웹 브라우저 요청 흐름
+1. https://www.google.com/search?q=test&hl=ko 입력
+2. https://132.250.196.142:443/search?q=test&hl=ko
+   - DNS 조회
+   - 생략된 port 확인
+3. HTTP 요청 메시지 생성
+   - ```text
+     GET/search?q=test&hl=ko HTTP/1.1
+     Host:www.google.com 
+     ```
+4. SOCKET 라이브러리를 통해 전달
+5. TCP/IP 패킹 생성
+6. 웹 브라우저 -> 구글 서버 이동
+7. 구글 서버에 패킷 도착
+8. TCP/IP 패킷을 까서 버리고 HTTP 메시지 해석
+9. /search?q=test&hl=ko 관련 데이터 찾음
+10. HTTP 응답 메시지 생성
+    - ```shell
+      HTTP/1.1 200 OK
+      Content-Type: text/html;charset=UTF-8
+      Content-Length: 3423
+     
+      <html>
+        <body>...</body>
+      </html>
+      ```
+11. 응답 패킷 전달
+12. 응답 패킷 도착
+13. TCP/IP 패킷을 까서 버리고 HTTP 메시지 해석
+14. HTML 렌더링
