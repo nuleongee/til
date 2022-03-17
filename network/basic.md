@@ -123,7 +123,7 @@
 8. TCP/IP 패킷을 까서 버리고 HTTP 메시지 해석
 9. /search?q=test&hl=ko 관련 데이터 찾음
 10. HTTP 응답 메시지 생성
-    - ```shell
+    - ```text
       HTTP/1.1 200 OK
       Content-Type: text/html;charset=UTF-8
       Content-Length: 3423
