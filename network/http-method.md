@@ -84,5 +84,34 @@
     ```
   
 #### PUT, PATCH, DELETE
+- PUT
+  - 리소스가 있으면 완전 대체
+  - 리소스가 없으면 생성
+  - `클라이언트가 리소스를 식별`
+  ```text
+      PUT /members/100 HTTP/1.1
+      Content-Type: application/json
+    
+      {
+        "username": "ls",
+        "age": 22
+      }
+    ```
+- PATCH
+  - 리소스 부분 변경
+  ```text
+      PATCH /members/100 HTTP/1.1
+      Content-Type: application/json
+    
+      {
+        "age": 30
+      }
+    ```
+- DELETE
+  - 리소스 제거
+  ```text
+      DELETE /members/100 HTTP/1.1
+      Host: localhost:8080
 
+    ```
 #### method 속성
