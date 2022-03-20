@@ -114,4 +114,18 @@
       Host: localhost:8080
 
     ```
+
 #### method 속성
+- 안전(Safe Methods)
+  - 호출해도 리소스를 변경하지 않음
+  - GET, HEAD
+- 멱등(Idempotent Methods)
+  - 한 번 호출하든 100번 호출하든 결과가 똑같다.
+  - GET, PUT, DELETE, ~~POST~~
+  - 자동 복구 메커니즘에 활용
+    - 서버 TIMEOUT 등으로 정상 응답 못받았을 때, 클라이언트가 같은 요청을 다시 시도
+- 캐시가능(Cacheable Methods)
+  - 응답 결과를 캐시해서 사용해도 되는가?
+  - GET, HEAD, POST, PATCH
+  - 실제로는 GET, POST 정도만 캐시로 사용
+    - POST, PATCH는 본문 내용까지 캐시 키로 고려해야 하는데, 구현이 쉽지 않음
