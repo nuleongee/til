@@ -35,6 +35,7 @@
 
 - HTML Form을 통한 데이터 전송
   - GET, POST만 지원
+
   ```html
     <form action="/save" method="post">
       <input type="text" name="username" />
