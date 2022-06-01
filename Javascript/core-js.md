@@ -21,33 +21,83 @@
 - ~~eval~~
 - module
 ```javascript
-var data = 1;
-function func1() {
-  console.log(data); // 1
+var a = 1;
+function inner() {
+  console.log(a); // 1, 1 출력
   
-  function func2() {
-    console.log(data);
-    var data = 3; // 2
+  function outer() {
+    console.log(a); // 2, undefined 출력
+    var a = 3;
   }
   
-  func2();
-  console.log(data); // 3
+  outer();
+  console.log(a); // 3, 1 출력
 }
-func1();
-console.log(data); // 4
+inner();
+console.log(a); // 4, 1 출력
 
-// 전역 실행 컨텍스트 오픈
-// func1 실행 컨텍스트 오픈
-// func2 실행 컨텍스트 오픈
-// func2 실행 컨텍스트 종료 
-// func1 실행 컨텍스트 종료 
-// 전역 실행 컨텍스트 종료 
+// 전역 실행 컨텍스트 활성화
+// inner 실행 컨텍스트 활성화
+// outer 실행 컨텍스트 활성화
+// outer 실행 컨텍스트 종료
+// inner 실행 컨텍스트 종료
+// 전역 실행 컨텍스트 종료
 ```
 ##### 콜스택(call stack)
 - 현재 어떤 함수가 동작중인지, 다음에 어떤 함수가 호출될 예정인지 등을 제어하는 자료구조
 - 스택 구조
 
 ##### 실행 컨텍스트 구조
-- VariableEnvironment: 식별자 정보 수집, 변화 반영 X
-- LexicalEnvironment: 각 식별자의 데이터 추적, 변화 반영 O
+- VariableEnvironment: 식별자 정보 수집, 변화 X
+- `LexicalEnvironment`: 각 식별자의 데이터 추적, 변화 O
 - ThisBinding
+
+##### LexicalEnvironment
+실행컨텍스트를 구성하는 환경 정보들을 모아 사전처럼 구성한 객체
+- environmentRecord: 현재 문맥의 식별자 정보 수집(hoisting)
+- outerEnvironmentReference: 현재 문맥에 관련 있는 외부 식별자 정보를 참조(scope chain)
+
+##### hoisting
+```javascript
+console.log(a());
+console.log(b());
+console.log(c());
+
+function a() {
+    return 'a';
+}
+var b = function bb() {
+    return 'bb';
+}
+var c = function() {
+    return 'c';
+}
+```
+```javascript
+function a() {
+  return 'a';
+}
+var b;
+var c;
+
+console.log(a());
+console.log(b());
+console.log(c());
+
+b = function bb() {
+    return 'bb';
+}
+c = function() {
+    return 'c';
+}
+```
+```javascript
+environmentRecord: {
+  function a() { ... },
+  b: undefined,
+  c: undefined
+}
+```
+
+##### scope chain
+변수를 가장 가까운 자기 자신부터, 점점 멀리있는 스코프 찾아 나가는 것(shadowing)
