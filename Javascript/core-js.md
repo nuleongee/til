@@ -91,7 +91,7 @@ c = function() {
     return 'c';
 }
 ```
-```javascript
+```text
 environmentRecord: {
   function a() { ... },
   b: undefined,
@@ -101,3 +101,15 @@ environmentRecord: {
 
 ##### scope chain
 변수를 가장 가까운 자기 자신부터, 점점 멀리있는 스코프 찾아 나가는 것(shadowing)
+
+### this
+- 전역공간에서: 전역객체, window(browser)/global(node.js)
+- 함수 호출시: 전역객체
+- 메서드 호출시: 메서드 호출 주체
+- callback 호출시: 기본적으로는 함수내부에서와 동일
+  - 명시적인 this 바인딩: call, apply, bind
+    ```javascript
+
+    ```
+- 생성자함수 호출시
+  - 
