@@ -12,3 +12,8 @@ git rm --cached node_modules -r
 ```shell
 git rm -r --cached .
 ```
+
+### .idea 지우기
+```shell
+git rm -r --cached .idea
+```
