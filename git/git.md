@@ -17,3 +17,8 @@ git rm -r --cached .
 ```shell
 git rm -r --cached .idea
 ```
+
+### git rm -r . 살리기
+```shell
+git reset --hard HEAD
+```
